@@ -5,4 +5,5 @@ package com.codehun.soomup;
  */
 public interface Game {
     public Problem nextProblem();
+    public boolean checkUserAnswer(int answer);
 }

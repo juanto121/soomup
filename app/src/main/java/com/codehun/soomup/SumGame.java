@@ -26,18 +26,24 @@ public class SumGame implements Game {
     }
 
     @Override
-    public SumProblem nextProblem(){
+    public Problem nextProblem(){
         current_problem = new SumProblem();
         return current_problem;
     }
 
-    public void checkUserAnswer(int user_answer){
+    @Override
+    public boolean checkUserAnswer(int user_answer){
+        boolean is_correct = false;
         if(user_answer != current_problem.getRealAnswer()){
             lives--;
         }else{
             current_correct_answers++;
+            is_correct = true;
         }
+        return is_correct;
     }
+
+
 
     public Problem getCurrentProblem(){
         return this.current_problem;

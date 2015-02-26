@@ -45,7 +45,7 @@ public class SumProblem implements Problem {
     }
 
     public int getRealAnswer() {
-        return realAnswer;
+        return this.sum.getResult();
     }
 
 
