@@ -56,6 +56,7 @@ public class AnswerFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     }
 

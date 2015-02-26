@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Soom extends ActionBarActivity implements AnswerFragment.AnswerListSelectionListener {
+public class Soom extends Activity implements AnswerFragment.AnswerListSelectionListener {
 
     private Game game;
     private FragmentManager fragments;
@@ -26,7 +26,12 @@ public class Soom extends ActionBarActivity implements AnswerFragment.AnswerList
         fragments = getFragmentManager();
 
         AnswerFragment answers = (AnswerFragment) fragments.findFragmentById(R.id.answer_fragment);
-        answers.setAnswers(game.nextProblem().getAnswers());
+        QuestionFragment question = (QuestionFragment) fragments.findFragmentById(R.id.problem_fragment);
+
+        Problem current_problem = game.nextProblem();
+
+        question.showProblemQuestion(current_problem);
+        answers.setAnswers(current_problem.getAnswers());
 
     }
 
